@@ -102,7 +102,6 @@ body {
 .cloud {
     position: absolute;
     opacity: 0.3;
-    /* Bỏ animation cố định, sẽ set bằng JS */
 }
 
 /* Header */
@@ -366,6 +365,13 @@ h1 {
     overflow: hidden;
 }
 
+.wish-card:nth-child(1) { animation-delay: 0.6s; animation: fadeInUp 1s ease-out 0.6s backwards; }
+.wish-card:nth-child(2) { animation-delay: 0.7s; animation: fadeInUp 1s ease-out 0.7s backwards; }
+.wish-card:nth-child(3) { animation-delay: 0.8s; animation: fadeInUp 1s ease-out 0.8s backwards; }
+.wish-card:nth-child(4) { animation-delay: 0.9s; animation: fadeInUp 1s ease-out 0.9s backwards; }
+.wish-card:nth-child(5) { animation-delay: 1.0s; animation: fadeInUp 1s ease-out 1.0s backwards; }
+.wish-card:nth-child(6) { animation-delay: 1.1s; animation: fadeInUp 1s ease-out 1.1s backwards; }
+
 .wish-card::before {
     content: '';
     position: absolute;
@@ -433,23 +439,289 @@ footer p {
     color: #ffeb3b;
 }
 
-/* Responsive */
+/* ========================================
+   RESPONSIVE DESIGN - Mobile Optimization
+   ======================================== */
+
+/* Tablet (768px and below) */
 @media (max-width: 768px) {
-    h1 { font-size: 2.8em; letter-spacing: 2px; }
-    .subtitle { font-size: 1.3em; }
-    .moon { width: 200px; height: 200px; }
-    .rabbit { width: 160px; height: 160px; }
-    .section-title { font-size: 2.2em; }
-    .frame-title { font-size: 2.4em; }
-    .mooncakes-section { padding: 40px 25px; }
-    .decorative-frame { padding: 40px 25px; }
-    .mooncakes-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+    /* Header */
+    h1 { 
+        font-size: 2.5em; 
+        letter-spacing: 2px; 
+    }
+    .subtitle { 
+        font-size: 1.2em; 
+        padding: 0 10px;
+    }
+    
+    header {
+        padding: 60px 15px 40px;
+    }
+    
+    /* Moon & Rabbit */
+    .moon { 
+        width: 180px; 
+        height: 180px; 
+    }
+    .rabbit { 
+        width: 140px; 
+        height: auto; 
+    }
+    .rabbit-section h3 {
+        font-size: 1.6em;
+    }
+    
+    /* Sections */
+    .section-title { 
+        font-size: 2em; 
+    }
+    .frame-title { 
+        font-size: 2em; 
+    }
+    
+    .mooncakes-section { 
+        padding: 40px 20px; 
+    }
+    .decorative-frame { 
+        padding: 40px 20px; 
+    }
+    
+    /* Grids */
+    .mooncakes-grid { 
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .wishes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    /* Cards */
+    .mooncake-item, .wish-card { 
+        padding: 20px; 
+    }
+    
+    .mooncake-img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .wish-icon {
+        font-size: 2.8em;
+    }
+    
+    .wish-card h4 {
+        font-size: 1.2em;
+    }
+    
+    .wish-detail {
+        font-size: 0.9em;
+    }
+    
+    /* Decorative elements */
+    .decorative-frame::before,
+    .decorative-frame::after {
+        font-size: 2em;
+        top: -20px;
+    }
+    
+    /* Floating elements */
+    .floating-lantern {
+        max-width: 80px;
+    }
+    
+    .cloud {
+        max-width: 150px;
+    }
 }
 
+/* Mobile (480px and below) */
 @media (max-width: 480px) {
-    h1 { font-size: 2em; }
-    .subtitle { font-size: 1.1em; }
-    .wishes-grid { grid-template-columns: 1fr; }
-    .mooncakes-grid { grid-template-columns: 1fr; }
-    .wish-card, .mooncake-item { padding: 25px; }
+    /* Header */
+    h1 { 
+        font-size: 1.8em;
+        letter-spacing: 1px;
+    }
+    .subtitle { 
+        font-size: 1em; 
+    }
+    
+    header {
+        padding: 40px 10px 30px;
+    }
+    
+    /* Moon & Rabbit */
+    .moon { 
+        width: 150px; 
+        height: 150px; 
+    }
+    .rabbit { 
+        width: 120px; 
+    }
+    .rabbit-section h3 {
+        font-size: 1.4em;
+        padding: 0 15px;
+    }
+    
+    /* Sections */
+    .section-title { 
+        font-size: 1.6em; 
+    }
+    .frame-title { 
+        font-size: 1.6em;
+        padding: 0 10px;
+    }
+    
+    .mooncakes-section,
+    .decorative-frame { 
+        padding: 30px 15px;
+        margin: 50px 0;
+    }
+    
+    /* Grids - 1 column for small mobile */
+    .wishes-grid,
+    .mooncakes-grid { 
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Cards */
+    .wish-card, 
+    .mooncake-item { 
+        padding: 25px 20px; 
+    }
+    
+    .mooncake-img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .mooncake-item h4,
+    .wish-card h4 {
+        font-size: 1.1em;
+    }
+    
+    .mooncake-item p,
+    .wish-detail {
+        font-size: 0.85em;
+    }
+    
+    .wish-icon {
+        font-size: 2.5em;
+    }
+    
+    /* Footer */
+    footer p {
+        font-size: 1.4em;
+    }
+    
+    .footer-small {
+        font-size: 1em !important;
+    }
+    
+    /* Decorative elements */
+    .decorative-frame::before,
+    .decorative-frame::after {
+        font-size: 1.5em;
+        top: -15px;
+    }
+    
+    .decorative-frame::before {
+        left: 20px;
+    }
+    
+    .decorative-frame::after {
+        right: 20px;
+    }
+    
+    /* Container padding */
+    .container {
+        padding: 15px;
+    }
+    
+    /* Floating elements */
+    .floating-lantern {
+        max-width: 60px;
+    }
+    
+    .cloud {
+        max-width: 120px;
+    }
+    
+    /* Reduce spacing */
+    .moon-section,
+    .rabbit-section {
+        margin: 40px 0;
+    }
+    
+    .frame-wishes-section {
+        margin: 60px 0;
+    }
+}
+
+/* Landscape mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    h1 {
+        font-size: 2em;
+    }
+    
+    .moon,
+    .rabbit {
+        width: 120px;
+        height: auto;
+    }
+    
+    .wishes-grid,
+    .mooncakes-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    header {
+        padding: 30px 15px 20px;
+    }
+    
+    .moon-section,
+    .rabbit-section {
+        margin: 30px 0;
+    }
+}
+
+/* Tablet specific (between mobile and desktop) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .wishes-grid,
+    .mooncakes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Very small screens (320px) */
+@media (max-width: 320px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    
+    .subtitle {
+        font-size: 0.9em;
+    }
+    
+    .moon {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .rabbit {
+        width: 100px;
+    }
+    
+    .mooncake-img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .wish-card,
+    .mooncake-item {
+        padding: 20px 15px;
+    }
 }
